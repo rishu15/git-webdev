@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Montserrat&family=Nova+Square&display=swap" rel="stylesheet">
+    
+    <title>Document</title>
+    <style>
+    *{
+        
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+
+}
+main{
+    height: 100vh;
+    background-image: linear-gradient(to right bottom , rgb(41, 156, 131) , rgb(0, 255, 140) , rgb(60, 128, 0) );
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.tip{
+    padding: 20px;
+}
+button{
+    border-radius: 5px;
+    background-color: rgb(rgb(0, 255, 128));
+    padding: 10px;
+    margin-top: 10px;
+}
+input{
+    margin-bottom: 10px;
+}
+label{
+    margin-bottom: 10px;
+}
+    </style>
+</head>
+<body>
+    
+    <main>
+        <div class="heading">
+        <h1>Tip calculator</h1>
+        </div>
+        <div class="tip">
+           
+            <label>Bill amount:</label><br>
+            <input type="number" name="" id="billAmount"><br>
+            <label>Percent of Bill:</label><br>
+            <input type="number" name="" id="percBill"><br>
+            <label>Total number of customers:</label><br>
+            <input type="number" name="" id="numPeople"><br>
+            <label>Total tip</label><br>
+            <input type="number" name="" id="totaltip" disabled><br>
+            <button id="button">Calculate</button>
+        </div>
+    </main>
+    <script>
+        function tipcalc() {
+            
+            let amount = document.getElementById('billAmount').value;
+            let perc = document.getElementById('percBill').value;
+            let num = document.getElementById('numPeople').value;
+            let tip = ((perc/100) * amount)/num;
+            document.getElementById('totaltip').value = tip;
+            
+        }
+        document.getElementById('button').addEventListener("click", tipcalc);
+    </script>
+</body>
+</html>
